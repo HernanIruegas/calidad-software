@@ -1,0 +1,811 @@
+// Clase Parte que guarda todas las caracteristicas de una parte, lineas agregadas, modificadas, etc.
+// Hernán Iruegas Villarreal A00817021
+// 18/02/2018
+
+//_p=Parte
+class Parte {
+	//_i
+	public:
+
+		Parte();
+		Parte(string nombreParte, int totalLDC, int base, int deleted, int modified, int added, int items);
+		string getNombreParte();
+		int getTotalLDC();
+		int getBase();
+		int getDeleted();
+		int getModified();
+		int getAdded();
+		int getItems();
+		void setNombreParte( string nombreParte );
+		void setTotalLDC( int totalLDC );
+		void setBase( int base );
+		void setDeleted( int deleted );
+		void setModified( int modified );
+		void setAdded( int added );
+		void setItems( int items );
+	//_i
+	private:
+
+		string nombreParte;
+		int totalLDC, base, deleted, modified, added, items;
+
+};
+
+Parte::Parte(){
+
+	this -> nombreParte = "default";
+	this -> totalLDC = 0;
+	this -> base = 0;
+	this -> deleted = 0;
+	this -> modified = 0;
+	this -> added = 0;
+	this -> items = 0;
+}
+
+Parte::Parte( string nombreParte, int totalLDC, int base, int deleted, int modified, int added, int items ) {
+	
+	this -> nombreParte = nombreParte;
+	this -> totalLDC = totalLDC;
+	this -> base = base;
+	this -> deleted = deleted;
+	this -> modified = modified;
+	this -> added = added;
+	this -> items = items;
+}
+
+string Parte::getNombreParte(){
+
+	return this -> nombreParte;
+}
+
+int Parte::getTotalLDC(){
+
+	return this -> totalLDC;
+}
+
+int Parte::getBase(){
+
+	return this -> base;
+}
+
+int Parte::getDeleted(){
+
+	return this -> deleted;
+}
+
+int Parte::getModified(){
+
+	return this -> modified;
+}
+
+int Parte::getAdded(){
+
+	return this -> added;
+}
+
+int Parte::getItems(){
+
+	return this -> items;
+}
+
+void Parte::setNombreParte( string nombreParte ){
+
+	this -> nombreParte = nombreParte;
+}
+
+void Parte::setTotalLDC( int totalLDC ){
+
+	this -> totalLDC =  this -> totalLDC + totalLDC;
+}
+
+void Parte::setBase( int base ){
+
+	this -> base = this -> base + base;
+}
+
+void Parte::setDeleted( int deleted ){
+
+	this -> deleted =  this -> deleted + deleted;
+}
+
+void Parte::setModified( int modified ){
+
+	this -> modified =  this -> modified + modified;
+}
+
+void Parte::setAdded( int added ){
+
+	this -> added =  this -> added + added;
+}
+
+void Parte::setItems( int items ){
+
+	this -> items =  this -> items + items;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Clase Archivo que guarda el nombre del archivo, su total de LDC y sus partes clasificadas
+// Hernán Iruegas Villarreal A00817021
+// 18/02/2018
+
+//_p=Archivo
+//_b=34
+class Archivo {
+	//_i
+	public:
+		//_d=4
+		Archivo();
+		Archivo( string nombreArchivo, int totalLDC, vector<Parte> partesBase, vector<Parte> partesAgregadas, vector<Parte> partesReusadas );//_m
+		string getNombre();
+		int getTotalLDC();
+		vector<Parte> getPartesBase();
+		vector<Parte> getPartesAgregadas();
+		vector<Parte> getPartesReusadas();
+		void setNombre( string nombreArchivo );
+		void setTotalLDC( int totalLDC );
+		void setPartesBase( Parte parteBase );
+		void setPartesAgregadas( Parte parteAgregada );
+		void setPartesReusadas( Parte parteReusada );
+	//_i
+	private:
+		//_d=2
+		string nombreArchivo;
+		int totalLDC;
+		vector<Parte> partesBase;
+		vector<Parte> partesAgregadas;
+		vector<Parte> partesReusadas;
+	
+};
+
+Archivo::Archivo(){
+
+	this -> nombreArchivo = "default.txt";
+	this -> totalLDC = 0; //_m
+}
+
+Archivo::Archivo( string nombreArchivo, int totalLDC, vector<Parte> partesBase, vector<Parte> partesAgregadas, vector<Parte> partesReusadas ){//_m
+	//_d=2
+	this -> nombreArchivo = nombreArchivo;
+	this -> totalLDC = totalLDC;
+	for( int i = 0; i < partesBase.size(); i++ ){
+		this -> partesBase.push_back( partesBase[i] );
+	}
+	for( int i = 0; i < partesAgregadas.size(); i++ ){
+		this -> partesAgregadas.push_back( partesAgregadas[i] );
+	}
+	for( int i = 0; i < partesReusadas.size(); i++ ){
+		this -> partesReusadas.push_back( partesReusadas[i] );
+	}
+}
+
+string Archivo::getNombre(){
+
+	return this -> nombreArchivo;
+}
+
+int Archivo::getTotalLDC(){
+
+	return this -> totalLDC;
+}
+
+vector<Parte> Archivo::getPartesBase(){
+
+	return this -> partesBase;
+}
+
+vector<Parte> Archivo::getPartesAgregadas(){
+
+	return this -> partesAgregadas;
+}
+
+vector<Parte> Archivo::getPartesReusadas(){
+
+	return this -> partesReusadas;
+}
+
+void Archivo::setNombre(string nombreArchivo){
+
+	this -> nombreArchivo = nombreArchivo;
+}
+
+void Archivo::setTotalLDC( int totalLDC ){
+
+	this -> totalLDC = this -> totalLDC + totalLDC;
+}
+
+void Archivo::setPartesBase( Parte parteBase ){
+
+	partesBase.push_back(parteBase);
+}
+
+void Archivo::setPartesAgregadas( Parte parteAgregada ){
+
+	partesAgregadas.push_back(parteAgregada);
+}
+
+void Archivo::setPartesReusadas( Parte parteReusada ){
+
+	partesReusadas.push_back(parteReusada);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Clase Archivero que guarda archivos dentro. Contiene las LDC totales del archivero y todas las partes de los archivos.
+// Hernán Iruegas Villarreal A00817021
+// 18/02/2018
+
+//_p=Archivero
+//_b=33
+class Archivero {
+	//_i
+	public:
+		//_d=4
+		Archivero();
+		Archivero( Archivo nombreArchivo, int totalLDC, vector<Parte> partesBase, vector<Parte> partesAgregadas, vector<Parte> partesReusadas ); //_m
+		int getTotalLDC();
+		vector<Archivo> getArchivos();
+		vector<Parte> getPartesBase();
+		vector<Parte> getPartesAgregadas();
+		vector<Parte> getPartesReusadas();
+		void setTotalLDC(int totalLDC);
+		void setPartesBase( vector<Parte> partesBase );
+		void setPartesAgregadas( vector<Parte> partesAgregadas );
+		void setPartesReusadas( vector<Parte> partesReusadas );
+		void setArchivo( Archivo nombreArchivo );
+	//_i
+	private:
+		//_d=2
+		int totalLDC;
+		vector<Archivo> archivos;
+		vector<Parte> partesBase;
+		vector<Parte> partesAgregadas;
+		vector<Parte> partesReusadas;
+		
+};
+
+Archivero::Archivero(){
+
+	this -> totalLDC = 0; //_m
+}
+
+Archivero::Archivero( Archivo nombreArchivo, int totalLDC, vector<Parte> partesBase, vector<Parte> partesAgregadas, vector<Parte> partesReusadas) {//_m
+	//_d=2
+	archivos.push_back(nombreArchivo);
+	this -> totalLDC = totalLDC;
+	for( int i = 0; i < partesBase.size(); i++ ){
+		this -> partesBase.push_back( partesBase[i] );
+	}
+	for( int i = 0; i < partesAgregadas.size(); i++ ){
+		this -> partesAgregadas.push_back( partesAgregadas[i] );
+	}
+	for( int i = 0; i < partesReusadas.size(); i++ ){
+		this -> partesReusadas.push_back( partesReusadas[i] );
+	}
+}
+
+int Archivero::getTotalLDC(){
+
+	return this -> totalLDC;
+}
+
+vector<Archivo> Archivero::getArchivos(){
+
+	return this -> archivos;
+}
+
+vector<Parte> Archivero::getPartesBase(){
+
+	return this -> partesBase;
+}
+
+vector<Parte> Archivero::getPartesAgregadas(){
+
+	return this -> partesAgregadas;
+}
+
+vector<Parte> Archivero::getPartesReusadas(){
+
+	return this -> partesReusadas;
+}
+
+void Archivero::setTotalLDC( int totalLDC ){
+
+	this -> totalLDC = this -> totalLDC + totalLDC;
+}
+
+void Archivero::setPartesBase( vector<Parte> partesBase ){
+
+	for( int i = 0; i < partesBase.size(); i++ ){
+		this -> partesBase.push_back( partesBase[i] );
+	}
+}
+
+void Archivero::setPartesAgregadas( vector<Parte> partesAgregadas ){
+
+	for( int i = 0; i < partesAgregadas.size(); i++ ){
+		this -> partesAgregadas.push_back( partesAgregadas[i] );
+	}
+}
+
+void Archivero::setPartesReusadas( vector<Parte> partesReusadas ){
+
+	for( int i = 0; i < partesReusadas.size(); i++ ){
+		this -> partesReusadas.push_back( partesReusadas[i] );
+	}
+}
+
+void Archivero::setArchivo(Archivo nombreArchivo){
+
+	this-> archivos.push_back(nombreArchivo);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Programa para leer archivos y desplegar las partes de los mismos, asi como el total de LDC de todos los archivos.
+// Hernán Iruegas Villarreal A00817021
+// 18/02/2018
+#include <iostream>
+using namespace std;
+#include <vector>
+#include <string>
+#include <stack>
+#include <fstream>
+#include <map>
+#include <queue>
+#include "Parte.h"
+#include "Archivo.h"
+#include "Archivero.h"
+
+// Sirve para limpiar una línea, quitar espacios en blanco y otros caracteres especiales
+//_p=QuitaEspacios
+//_b=6
+string quitaEspacios( string &linea ){
+	//_i
+	string lineaAux = ""; 
+
+	// Hay que limpiar la línea leída de todos aquellos espacios en blanco
+	for(int i = 0; i < linea.length(); i++){
+        if(linea[i] != ' ' && linea[i] != '\t' && linea[i] != '\r' && linea[i] != '\v'){
+          lineaAux += linea[i];
+        }
+    }
+
+   return lineaAux;
+}
+
+// Sirve para limpiar una línea, quita los caracteres que están dentro de strings
+//_p=quitaStrings
+string quitaStrings( string &linea ){
+
+	string lineaAux = ""; // Contiene una linea sin caracteres dentro de strings
+	bool insideString = false;
+
+	// Añado caracteres que no estén dentro de un string
+	for( int i = 0; i < linea.length(); i++ ){
+		if( linea[i] == '"' )
+			insideString = !insideString;
+        if( !insideString ){
+          lineaAux += linea[i];
+        }
+    }
+    
+    return lineaAux;
+}
+
+// Valida que una linea no contenga puros espacios en blanco, que no sea parte de un comentario de tipo bloque ni que tampoco
+// tenga un solo caracter como '{' o '}'
+//_p=validaLDC
+bool validaLDC( string linea, stack<string> &stackComment ){
+	//_i
+	if( linea.length() > 0 ){
+
+		// Tengo que asegurarme que estos caracteres no estén dentro de un string, porque en ese caso no sería un comentario
+		if( linea.find("/*") != string::npos ) 
+			stackComment.push( "/*" );
+
+		if( stackComment.empty() ){
+
+			if( !( linea.length() == 1 && ( linea[0] == '}' || linea[0] == '{' ) ) )
+				return true;
+			else
+				return false;
+
+		}else{
+
+			if( linea.find("*/") != string::npos ) 
+				stackComment.pop();
+			return false;
+		}
+	}else 
+		return false;
+
+}
+
+// Sirve para leer el archivo completo y obtener todas sus partes y LDC
+//_p=obtenerPartes
+void obtenerPartes( ifstream &archEntrada, map<string, Parte> &partesArchivo, int &totalLDCArchivo, map<string, string> &nombrePartes ){
+
+	int totalLDCParte = 0, base = 0, deleted = 0, added = 0, modified = 0, items = 0; // Propiedades de las partes
+	bool partes = false, primeraVez = true;
+	string nuevaParte = "", aux = "", linea = "";
+	stack<string> stackComment;
+	//_i
+	while( getline( archEntrada, linea ) ){
+
+		linea = quitaEspacios( linea );
+
+		linea = quitaStrings( linea );
+
+		if( validaLDC( linea, stackComment ) ){
+
+			//cout << linea << endl;
+
+			// Aseguramos que sea una LDC contable
+			if( linea.find( "//" ) == string::npos || linea.substr( 0, 2 ) != "//")
+				( partes ) ? totalLDCArchivo++, totalLDCParte++ : totalLDCArchivo++;
+			
+			// Encontramos una nueva parte dentro del archivo, tenemos que guardar los datos de la parte anterior
+			if( linea.find( "_p" ) != string::npos ){
+
+				partes = true;
+				aux = nuevaParte;
+				added = totalLDCParte - base + deleted; // Calculamos las lineas agregadas de la parte
+
+				// Se necesita obtener el nombre de la parte
+				// Se elimina lo que está antes del nombre en el string
+				string delimitador = "_p=";
+				int pos = linea.find( "_p=" );
+				nuevaParte = linea.erase(0, pos + delimitador.length() );
+
+				cout<< nuevaParte << endl;
+
+				// Agregamos el nombre de la parte al mapa, en caso de no repetirse
+				if( nombrePartes.find( nuevaParte ) == nombrePartes.end() )
+					nombrePartes[nuevaParte] = nuevaParte;
+
+				// Se guarda la información de la parte en el mapa
+				// Si no existe entonces se crea un nuevo objeto, si ya existe entonces se actualiza
+				if( primeraVez ){
+					Parte parte( nuevaParte, totalLDCParte, base, deleted, modified, added, items );
+					partesArchivo[ nuevaParte ] = parte;  
+					primeraVez = false;
+				}else{
+					if( partesArchivo.find( aux ) != partesArchivo.end() ){ // La parte ya existe, solo hay que actualizar valores
+						partesArchivo[ aux ].setTotalLDC( totalLDCParte );
+						partesArchivo[ aux ].setBase( base );
+						partesArchivo[ aux ].setDeleted( deleted );
+						partesArchivo[ aux ].setModified( modified );
+						partesArchivo[ aux ].setAdded( added );
+						partesArchivo[ aux ].setItems( items );
+					}
+					else{
+						Parte parte( aux, totalLDCParte, base, deleted, modified, added, items );
+						partesArchivo[ aux ] = parte;
+					}
+				}
+
+				totalLDCParte = 0;
+				base = 0;
+				deleted = 0;
+				added = 0;
+				modified = 0;
+				items = 0;
+
+			}
+			//_i
+			if( linea.find( "_i" ) != string::npos )
+				items++;
+
+			if( linea.find( "_m" ) != string::npos )
+				modified++;
+		
+			if( linea.find( "_b" ) != string::npos ){
+
+				// Se necesita obtener el número que representa las líneas base
+				// Se elimina lo que está antes del número en el string
+				string delimitador = "_b=";
+				int pos = linea.find( "_b=" );
+				linea.erase(0, pos + delimitador.length() );
+
+				base += atoi(linea.c_str());
+			}
+
+			if( linea.find( "_d" ) != string::npos ){
+
+				// Se necesita obtener el número que representa las líneas base
+				// Se elimina lo que está antes del número en el string
+				string delimitador = "_d=";
+				int pos = linea.find( "_d=" );
+				linea.erase(0, pos + delimitador.length() );
+
+				deleted += atoi(linea.c_str());
+			}
+		}		
+	}
+
+	added = totalLDCParte - base + deleted; // Calculamos las lineas agregadas de la parte
+	//_i
+	// Tengo que actualizar para la ultima parte del archivo
+	if( partesArchivo.find( nuevaParte ) != partesArchivo.end() ){ // La parte ya existe, solo hay que actualizar valores
+		partesArchivo[ nuevaParte ].setTotalLDC( totalLDCParte );
+		partesArchivo[ nuevaParte ].setBase( base );
+		partesArchivo[ nuevaParte ].setDeleted( deleted );
+		partesArchivo[ nuevaParte ].setModified( modified );
+		partesArchivo[ nuevaParte ].setAdded( added );
+		partesArchivo[ nuevaParte ].setItems( items );
+	}
+	else{
+		Parte parte( nuevaParte, totalLDCParte, base, deleted, modified, added, items );
+		partesArchivo[ nuevaParte ] = parte;
+	}
+}
+
+// Sirve para actualizar las propiedas del archivo con las partes que se encuentran en el mapa de partes
+//_p=actualizarArchivo
+void actualizarArchivo( Archivo &archivo, map<string, Parte> &partesArchivo, int &totalLDCArchivo, string nombreArchivo, map<string, string> nombrePartes ){
+	//_i
+	archivo.setNombre( nombreArchivo );
+	archivo.setTotalLDC( totalLDCArchivo );
+	vector<string> partes;
+
+	for(map<string, Parte>::iterator it = partesArchivo.begin(); it != partesArchivo.end(); it++){
+	     partes.push_back( it -> first );
+	}
+	//_i
+	for( int i = 0; i < partes.size(); i++ ){
+
+		if( partesArchivo[ partes[i] ].getBase() > 0  && ( partesArchivo[ partes[i] ].getModified() > 0 || partesArchivo[ partes[i] ].getDeleted() > 0 || partesArchivo[ partes[i] ].getAdded() > 0 ) )
+			archivo.setPartesBase( partesArchivo[ partes[i] ] ); // Es una parte base
+		else{
+			if( partesArchivo[ partes[i] ].getBase() > 0 && partesArchivo[ partes[i] ].getModified() == 0 && partesArchivo[ partes[i] ].getDeleted() == 0  && partesArchivo[ partes[i] ].getAdded() == 0 )
+				archivo.setPartesReusadas( partesArchivo[ partes[i] ] ); // Es una parte reusada
+			else{
+				if( partesArchivo[ partes[i] ].getBase() == 0 && partesArchivo[ partes[i] ].getModified() == 0 && partesArchivo[ partes[i] ].getDeleted() == 0  && partesArchivo[ partes[i] ].getAdded() > 0 )
+					archivo.setPartesAgregadas( partesArchivo[ partes[i] ] ); // Es una parte nueva
+			}
+		}
+	}
+}
+
+// Sirve para crear archivos y agregarlos al archivero
+// Recibe el mapa ArchivosUnicos para validar que no se repitan los nombres de los archivos
+// Recibe cantidadArchivos y la variable i del ciclo for donde se manda a llamar esta función, con el propósito de controlar cuantos archivos se deben de desplegar en pantalla 
+//_p=agregarArchivos
+//_b=26
+void agregarArchivos(map<string, string>& ArchivosUnicos, Archivero &archivos, int &cantidadArchivos, int &i){
+	//_d=1
+	//_i
+	ifstream archEntrada; // Se necesita para abrir los archivos del usuario
+	string nombreArchivo;
+	map<string, Parte> partesArchivo; // Contiene las partes del archivo que se está leyendo
+	int totalLDCArchivo = 0;
+	map<string, string> nombrePartes; // Contiene los nombres de las partes del archivo
+
+	cout << "\nIngrese el nombre del archivo: ";
+	cin >> nombreArchivo;
+
+	// Hay que validar que el nombre del archivo no se repita
+	if( ArchivosUnicos.find(nombreArchivo) == ArchivosUnicos.end() ){
+
+		archEntrada.open(nombreArchivo);
+
+		// Hay que validar que el nombre del archivo existe
+		if(archEntrada){
+
+			// Se lee el arhivo y se consiguen todas sus partes y LDC
+			obtenerPartes( archEntrada, partesArchivo, totalLDCArchivo, nombrePartes ); 
+
+			// Se crea el archivo y se actualiza con sus partes y nombre
+			Archivo archivo; //_m
+			actualizarArchivo( archivo, partesArchivo, totalLDCArchivo, nombreArchivo, nombrePartes);
+
+			// Se agrega el archivo al archivero
+			archivos.setArchivo(archivo); 
+
+			//_i
+			//_d=2
+			// Actualizo las propiedades del archivero
+			archivos.setTotalLDC( archivo.getTotalLDC() ); //_m
+			archivos.setPartesBase( archivo.getPartesBase() ); //_m
+			archivos.setPartesAgregadas( archivo.getPartesAgregadas() );
+			archivos.setPartesReusadas( archivo.getPartesReusadas() );
+
+			archEntrada.close();
+			ArchivosUnicos[nombreArchivo] = nombreArchivo;
+		}else{
+
+			cout<< "Error: Este archivo no existe" << endl;
+			cantidadArchivos -= 1;
+			i -= 1;
+		}
+	}else{ // El nombre del archivo es repetido
+
+		cout << "Error: Este archivo es repetido, introduzca archivos únicos" << endl;
+		cantidadArchivos -= 1;
+		i -= 1;
+	}
+}
+
+// Sirve para desplegar en pantalla todos los archivos validos que el usuario registro, los que se encuentran dentro del archivero
+// Tambien escribe estos resultados en un archivo de salida llamado ConteoLDC.txt
+//_p=desplegarPartes
+//_b=11
+void desplegarPartes(int cantidadArchivos, Archivero archivos){//_m
+
+	ofstream archSalida;
+	string nombreArchivoSalida = "ConteoLDC.txt";
+
+	archSalida.open(nombreArchivoSalida);
+	//_i
+	cout << "\nPARTES BASE:" << endl;
+	archSalida << "\nPARTES BASE:" << endl;
+	for(int i = 0; i < archivos.getPartesBase().size(); i++){
+		//_d=4
+		cout << "\t" << archivos.getPartesBase()[i].getNombreParte() << ": ";
+		archSalida << "\t" << archivos.getPartesBase()[i].getNombreParte() << ": ";
+
+		cout << "T=" << archivos.getPartesBase()[i].getTotalLDC() << ", ";
+		archSalida << "T=" << archivos.getPartesBase()[i].getTotalLDC() << ", ";
+
+		cout << "I=" << archivos.getPartesBase()[i].getItems() << ", ";
+		archSalida << "I=" << archivos.getPartesBase()[i].getItems() << ", ";
+
+		cout << "B=" << archivos.getPartesBase()[i].getBase() << ", ";
+		archSalida << "B=" << archivos.getPartesBase()[i].getBase() << ", ";
+
+		cout << "D=" << archivos.getPartesBase()[i].getDeleted() << ", ";
+		archSalida << "D=" << archivos.getPartesBase()[i].getDeleted() << ", ";
+
+		cout << "M=" << archivos.getPartesBase()[i].getModified() << ", ";
+		archSalida << "M=" << archivos.getPartesBase()[i].getModified() << ", ";
+
+		cout << "A=" << archivos.getPartesBase()[i].getAdded() << endl;
+		archSalida << "A=" << archivos.getPartesBase()[i].getAdded() << endl;
+	}
+	cout << "----------------------------------------------------" << endl;
+	archSalida << "----------------------------------------------------" << endl;
+
+	cout << "\nPARTES NUEVAS:" << endl;
+	archSalida << "\nPARTES NUEVAS:" << endl;
+	for(int i = 0; i < archivos.getPartesAgregadas().size(); i++){
+
+		cout << "\t" << archivos.getPartesAgregadas()[i].getNombreParte() << ": ";
+		archSalida << "\t" << archivos.getPartesAgregadas()[i].getNombreParte() << ": ";
+
+		cout << "T=" << archivos.getPartesAgregadas()[i].getTotalLDC() << ", ";
+		archSalida << "T=" << archivos.getPartesAgregadas()[i].getTotalLDC() << ", ";
+
+		cout << "I=" << archivos.getPartesAgregadas()[i].getItems() << endl;
+		archSalida << "I=" << archivos.getPartesAgregadas()[i].getItems() << endl;
+
+	}
+	cout << "----------------------------------------------------" << endl;
+	archSalida << "----------------------------------------------------" << endl;
+
+	cout << "\nPARTES REUSADAS:" << endl;
+	archSalida << "\nPARTES REUSADAS:" << endl;
+	for(int i = 0; i < archivos.getPartesReusadas().size(); i++){
+
+		cout << "\t" << archivos.getPartesReusadas()[i].getNombreParte() << ": ";
+		archSalida << "\t" << archivos.getPartesReusadas()[i].getNombreParte() << ": ";
+
+		cout << "T=" << archivos.getPartesReusadas()[i].getTotalLDC() << ", ";
+		archSalida << "T=" << archivos.getPartesReusadas()[i].getTotalLDC() << ",";
+
+		cout << "I=" << archivos.getPartesReusadas()[i].getItems() << ", ";
+		archSalida << "I=" << archivos.getPartesReusadas()[i].getItems() << ", ";
+
+		cout << "B=" << archivos.getPartesReusadas()[i].getBase() << endl;
+		archSalida << "B=" << archivos.getPartesReusadas()[i].getBase() << endl;
+
+	}
+	cout << "----------------------------------------------------" << endl;
+	archSalida << "----------------------------------------------------" << endl;
+
+	//_d=4
+	cout << "\nTotal de LDC:" << archivos.getTotalLDC() << endl;
+	archSalida << "\nTotal de LDC:" << archivos.getTotalLDC() << endl;
+
+	archSalida.close();
+}
+
+//_p=Main
+//_b=11
+int main(){
+
+	//_d=2
+	map<string, string> ArchivosUnicos; // Contiene los nombres de los archivos únicos, sirve para validar que un archivo no se repita
+	int cantidadArchivos; 
+	Archivero archivos; // Contiene a los archivos que el usuario registra
+
+	cout << "Cuantos archivos desea ingresar? ";
+	cin >> cantidadArchivos;
+
+	for(int i = 0; i < cantidadArchivos; i++){
+
+		agregarArchivos(ArchivosUnicos, archivos, cantidadArchivos, i);
+	}
+
+	if( cantidadArchivos > 0 )
+		desplegarPartes(cantidadArchivos, archivos);
+
+	return 0;
+}

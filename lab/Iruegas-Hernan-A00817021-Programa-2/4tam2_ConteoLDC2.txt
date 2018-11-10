@@ -1,0 +1,22 @@
+
+PARTES BASE:
+	Archivero: T=66, I=2, B=33, D=8, M=3, A=41
+	Archivo: T=53, I=2, B=34, D=8, M=3, A=27
+	Main: T=11, I=0, B=11, D=2, M=0, A=2
+	agregarArchivos: T=29, I=2, B=26, D=3, M=3, A=6
+	desplegarPartes: T=50, I=1, B=11, D=8, M=1, A=47
+----------------------------------------------------
+
+PARTES NUEVAS:
+	Parte: T=66, I=2
+	actualizarArchivo: T=15, I=2
+	obtenerPartes: T=67, I=3
+	quitaStrings: T=9, I=0
+	validaLDC: T=15, I=1
+----------------------------------------------------
+
+PARTES REUSADAS:
+	QuitaEspacios: T=6,I=1, B=6
+----------------------------------------------------
+
+Total de LDC:387

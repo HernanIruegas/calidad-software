@@ -1,0 +1,18 @@
+
+PARTES BASE:
+	Archivo: T=110, I=2, B=34, D=30, M=0, A=106
+	calcularInfoArchivo: T=25, I=1, B=26, D=18, M=0, A=17
+	main: T=12, I=1, B=11, D=4, M=2, A=5
+----------------------------------------------------
+
+PARTES NUEVAS:
+	Calculo: T=71, I=1
+	desplegarInfoArchivo: T=9, I=1
+	obtenerInfoArchivo: T=14, I=1
+----------------------------------------------------
+
+PARTES REUSADAS:
+	QuitaEspacios: T=6, I=1, B=6
+----------------------------------------------------
+
+Total de LDC:256
